@@ -38,9 +38,9 @@ window.addEventListener("load", function() {
          event.preventDefault();
       }
       let pilotStatus = document.getElementById("pilotStatus");
-      pilotStatus.innerHTML = `${pilotNameInput.value}: Pilot Ready`;
+      pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch`;
       let copilotStatus = document.getElementById("copilotStatus");
-      copilotStatus.innerHTML = `${copilotNameInput.value}: Co-Pilot Ready`;
+      copilotStatus.innerHTML = `Co-Pilot ${copilotNameInput.value} is ready for launch`;
       let list = document.getElementById("launchStatusCheck");
       if (fuelLevelInput.value < 10000) {
          let fuelStatus = document.getElementById("fuelStatus");
@@ -60,8 +60,8 @@ window.addEventListener("load", function() {
       }
       if (cargoMassInput.value <= 10000 && fuelLevelInput.value >= 10000){
          document.getElementById("launchStatus").style.color = "green";
-         document.querySelector("h2").innerHTML = "Shuttle is ready for launch";
-
+         document.getElementById("launchStatus").innerHTML = `<h2>Shuttle ready for launch</h2>`;
+         event.preventDefault();
       }
 
    });
