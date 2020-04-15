@@ -46,8 +46,9 @@ window.addEventListener("load", function() {
          let fuelStatus = document.getElementById("fuelStatus");
          fuelStatus.innerHTML = `Not enough fuel`;
          document.getElementById("faultyItems").style.visibility = "visible";
-         document.getElementById("launchStatus").style.color = "red";
-         document.querySelector("h2").innerHTML = "Shuttle not ready for launch";
+         let launchStatus = document.getElementById("launchStatus");
+         launchStatus.style.color = "red";
+         launchStatus.innerHTML = `Shuttle not ready for launch`;
          event.preventDefault();
       }
       if (cargoMassInput.value > 10000) {
@@ -55,7 +56,9 @@ window.addEventListener("load", function() {
          cargoStatus.innerHTML = `Too much mass for the shuttle to take off`;
          document.getElementById("faultyItems").style.visibility = "visible";
          document.getElementById("launchStatus").style.color = "red";
-         document.querySelector("h2").innerHTML = "Shuttle not ready for launch";
+         let launchStatus = document.getElementById("launchStatus");
+         launchStatus.style.color = "red";
+         launchStatus.innerHTML = `Shuttle not ready for launch`;
          event.preventDefault();
       }
       if (cargoMassInput.value <= 10000 && fuelLevelInput.value >= 10000){
